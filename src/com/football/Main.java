@@ -7,19 +7,19 @@ package com.football;
 public class Main {
     public static void main(String[] args) {
 
-        //Объект класса калькулятор имеет текущее значение
-        String source = "555.555,dd";
-        String s = ",";
+        //present value
+        String source = "5.5,dd";
+        String punctuation = ",";
         String first;
-        if (source.indexOf(s) != -1) {  //найдено s в source;
+        if (source.indexOf(punctuation) != -1) {  //found s в source;
             System.out.println("Дано число не стандартного формата ! ");
-            // Определяем позицию символа ','
+            // Determine the position of the character ','
             int p1 = source.indexOf(',');
-            // Вырезаем первое слово
+            // Cut the first word
             first = source.substring(0, p1);
-            // Вырезаем второе слово
+            // Cut the second word
             String second = source.substring(p1);
-            // Сшиваем все по-новому
+            // sew
             String result = first + second;
             System.out.println("result=" + result);
             System.out.println("first=" + first);
@@ -27,19 +27,24 @@ public class Main {
             System.out.println("Дано число стандартного формата ! ");
             first = source;
         }
-        //переводит строку в число
-        double aInt = Double.parseDouble(first);
+        //converts a string to number
+        double number = Double.parseDouble(first);
 
-        // int a = (int) (aInt);
-        System.out.println("a=" + aInt);
-        Calculator calculator=new Calculator(aInt);
 
-        System.out.println(calculator.sum(2.5));
+        System.out.println("a=" + number);
+        Calculator count=new Calculator(number);
 
-        System.out.println(calculator.subtraction(2.5));
+        System.out.println(count.sum(2.5));
 
-        System.out.println(calculator.multiplication(2.5));
+        System.out.println(count.subtraction(2.5));
 
-        System.out.println(calculator.division(2.5));
+        System.out.println(count.multiplication(0));
+
+        System.out.println(count.division(2.5));
+
+        System.out.println(count.sum(1));
+        System.out.println(count.subtraction(0.5));
+        System.out.println(count.division(0));
+
     }
 }

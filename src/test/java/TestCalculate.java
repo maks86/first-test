@@ -52,5 +52,6 @@ public class TestCalculate {
         double res = string.add(2);
         assertEquals(7.5, res);
         System.out.println(string.getResult());
+        System.out.println(string.getFirst());
     }
 }

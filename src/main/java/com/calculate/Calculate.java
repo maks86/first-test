@@ -9,6 +9,8 @@ public class Calculate {
     double result;
     String punctuation = ",";
     String first;
+    String assemblyLine;
+    String second;
 
     public Calculate(double result) {
         this.result = result;
@@ -21,14 +23,14 @@ public class Calculate {
             // Cut the first word
             first = str.substring(0, p1);
             // Cut the second word
-            String second = str.substring(p1);
+            second = str.substring(p1);
             // sew
-            String assemblyLine = first + second;
+            assemblyLine = first + second;
             System.out.println("assemblyLine=" + assemblyLine);
             //converts a string to number
             res = Double.parseDouble(first);
             result=res;
-            System.out.println("result="+(result));
+            System.out.println("result="+result);
         } else {
             System.out.println("Given the number of standard format ! ");
         }
@@ -56,6 +58,10 @@ public class Calculate {
   }
     public  double getResult(){
         return result;
+    }
+    public String getFirst(){
+        String assemblyLine = String.valueOf(result)+second;
+        return "assemblyLine="+assemblyLine;
     }
 }
 

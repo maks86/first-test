@@ -49,9 +49,8 @@ public class TestCalculate {
     @Test
     public void testAdd() {
         string = new Calculate("5.5,dd");
-        System.out.println(string);
         double res = string.add(2);
         assertEquals(7.5, res);
-
+        System.out.println(string.getResult());
     }
 }

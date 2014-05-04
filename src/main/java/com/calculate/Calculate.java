@@ -54,5 +54,8 @@ public class Calculate {
             result/=b;
          return result;
   }
+    public  double getResult(){
+        return result;
+    }
 }
 

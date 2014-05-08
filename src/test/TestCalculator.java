@@ -1,7 +1,6 @@
-import com.calculate.*;
+import com.calculator.*;
 import org.junit.Before;
 import org.junit.Test;
-
 import static junit.framework.Assert.*;
 
 public class TestCalculator {

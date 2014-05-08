@@ -3,30 +3,40 @@
 Денежные суммы могут передаваться как в виде числовых параметров, так и в виде строк в формате xxx.xxx,dd.
 Класс должен возвращать результат как в числовом виде, так и в строковом в вышеуказанном формате.
 Написать тестирующий класс, проверяющий корректность работы класса (10.000,25)*/
-package com.calculate;
+package com.calculator;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class Calculator {
     double result;
-    String example1;
-    String example2;
 
     public Calculator(double result) {
         this.result = result;
     }
     public Calculator(String str){
-        example1=str.replace(".","");
-        example2=example1.replace(",",".");
+       String example1= str.replace(".","");
+        String example2=example1.replace(",",".");
         result=Double.valueOf(example2);
     }
     public double add(double b) {
         result+=b;
+        NumberFormat format = NumberFormat.getInstance(Locale.UK);
+        format.setMaximumFractionDigits(1);
+        System.out.println(result+1);
+        System.out.println(format.format(result)+1);
         return result;
     }
     public double subtract(double b) {
         result-=b;
+        NumberFormat format = NumberFormat.getInstance(Locale.UK);
+        format.setMaximumFractionDigits(1);
         return result;
     }
     public double multiply(double b) {
         result*=b;
+        NumberFormat format = NumberFormat.getInstance(Locale.UK);
+        format.setMaximumFractionDigits(1);
         return result;
     }
     public double divide(double b) {
@@ -36,6 +46,4 @@ public class Calculator {
         result/=b;
         return result;
     }
-
 }
-

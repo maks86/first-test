@@ -21,22 +21,14 @@ public class Calculator {
     }
     public double add(double b) {
         result+=b;
-        NumberFormat format = NumberFormat.getInstance(Locale.UK);
-        format.setMaximumFractionDigits(1);
-        System.out.println(result+1);
-        System.out.println(format.format(result)+1);
         return result;
     }
     public double subtract(double b) {
         result-=b;
-        NumberFormat format = NumberFormat.getInstance(Locale.UK);
-        format.setMaximumFractionDigits(1);
         return result;
     }
     public double multiply(double b) {
         result*=b;
-        NumberFormat format = NumberFormat.getInstance(Locale.UK);
-        format.setMaximumFractionDigits(1);
         return result;
     }
     public double divide(double b) {
@@ -45,5 +37,13 @@ public class Calculator {
         }
         result/=b;
         return result;
+    }
+    public String toString(double b){
+        double number = b;
+        NumberFormat format = NumberFormat.getInstance(Locale.UK);
+        format.setMaximumFractionDigits(1);
+        System.out.println(result);
+        System.out.println(format.format(number));
+        return format.format(number);
     }
 }

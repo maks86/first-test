@@ -5,9 +5,6 @@
 Написать тестирующий класс, проверяющий корректность работы класса (10.000,25)*/
 package com.calculator;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-
 public class Calculator {
     double result;
 
@@ -15,9 +12,7 @@ public class Calculator {
         this.result = result;
     }
     public Calculator(String str){
-       String example1= str.replace(".","");
-        String example2=example1.replace(",",".");
-        result=Double.valueOf(example2);
+        result=Double.valueOf(str.replace(".","").replace(",","."));
     }
     public double add(double b) {
         result+=b;
@@ -38,12 +33,8 @@ public class Calculator {
         result/=b;
         return result;
     }
-    public String toString(double b){
-        double number = b;
-        NumberFormat format = NumberFormat.getInstance(Locale.UK);
-        format.setMaximumFractionDigits(1);
-        System.out.println(result);
-        System.out.println(format.format(number));
-        return format.format(number);
+    public String toString(double result){
+        System.out.println(String.valueOf(result));
+        return String.valueOf(result);
     }
 }

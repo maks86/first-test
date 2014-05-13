@@ -2,6 +2,10 @@ import com.calculator.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import static junit.framework.Assert.*;
 
 public class TestCalculator {
@@ -36,8 +40,9 @@ public class TestCalculator {
     }
     @After
     public void testToString(){
-         String answer=calculator.toString(res);
-         String result=String.valueOf(res);
-         assertEquals(answer,result);
+        String answer=calculator.toString(res);
+        NumberFormat format = NumberFormat.getInstance(Locale.UK);
+        format.setMaximumFractionDigits(1);
+        assertEquals(answer, format.format(res));
     }
 }

@@ -4,6 +4,8 @@
 Класс должен возвращать результат как в числовом виде, так и в строковом в вышеуказанном формате.
 Написать тестирующий класс, проверяющий корректность работы класса (10.000,25)*/
 package com.calculator;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Calculator {
     double result;
@@ -34,7 +36,10 @@ public class Calculator {
         return result;
     }
     public String toString(double result){
-        System.out.println(String.valueOf(result));
-        return String.valueOf(result);
-    }
+            NumberFormat format = NumberFormat.getInstance(Locale.UK);
+            format.setMaximumFractionDigits(1);
+            System.out.println(format.format(result));
+            return format.format(result);
+        }
+      //  А здесь нужно приводить к строке текущее значение result
 }

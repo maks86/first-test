@@ -8,7 +8,7 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class Calculator {
-    double result;
+   private double result;
 
     public Calculator(double result) {
         this.result = result;
@@ -29,17 +29,19 @@ public class Calculator {
         return result;
     }
     public double divide(double b) {
-        if (b==0){
-            throw new IllegalArgumentException("division by zero!");
+        try {
+            if (b==0){
+                throw new IllegalArgumentException();
+            }
+            result/=b;
+        }catch (Exception e){
+            System.out.println("division by zero!");
         }
-        result/=b;
-        return result;
+            return result;
     }
-    public String toString(double result){
+    public String toString(){
             NumberFormat format = NumberFormat.getInstance(Locale.UK);
-            format.setMaximumFractionDigits(1);
-            System.out.println(format.format(result));
+            format.setMaximumFractionDigits(2);
             return format.format(result);
         }
-      //  А здесь нужно приводить к строке текущее значение result
 }
